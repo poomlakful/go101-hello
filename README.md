@@ -1,6 +1,7 @@
 #Learning source:
 - Awesome-go
 - tour.golang // this online IDE for golang
+- https://gobyexample.com/
 #Go install
 
 #Go folder structure
@@ -16,11 +17,11 @@ While is for
     for i < 10  {
         i++
     }
-slide
-https://tour.golang.org/moretypes/18
+slide: https://tour.golang.org/moretypes/18
 
 #Go command
 $go version
 $go env
 $go mod init
 $go run ${filename_and_ext}
+$go test -v

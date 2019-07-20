@@ -4,13 +4,14 @@ import (
 	"bufio"
 	"encoding/csv"
 	"fmt"
-	children "hello/child" // can specific new name for using the class have been imported
+	children "hello/child" // can specific new name for using the class that have been imported
 	"log"
 	"math/rand"
 	"os"
 	"strconv"
 )
 
+// variable can create outside function with the code below
 var java bool
 
 // call this function first
@@ -32,6 +33,7 @@ func main() {
 	slice = append(slice, 1, 2, 3, 4)
 	fmt.Println(slice, cap(slice), len(slice))
 
+	// for each array
 	// _ is ingore variable
 	for _, v := range slice {
 		fmt.Println(v)
@@ -51,6 +53,28 @@ func main() {
 		// render per rows
 		fmt.Println(row[0], row[1], row[7], getGrade(point))
 	}
+
+	// map
+	// m := make(map[string]string)
+	// m := map[string]string{}
+	// awlay end with ","
+	m := map[string]string{
+		"B": "Banana",
+		"C": "Cat",
+	}
+	m["A"] = "Apple"
+	fmt.Println(m)
+	delete(m, "B")
+	fmt.Println(m)
+	for k, v := range m {
+		fmt.Println(k, v)
+	}
+	if value, ok := m["D"]; !ok {
+		fmt.Println(value, ok)
+	}
+
+	text := "2019-07-18 23:56:44"
+	getThaiNumber(text)
 }
 
 /**
@@ -74,4 +98,28 @@ func getGrade(point float64) string {
 		return "C"
 	}
 	return "D"
+}
+
+func getThaiNumber(text string) {
+	numberMap := map[string]string{
+		"1": "๑",
+		"2": "๒",
+		"3": "๓",
+		"4": "๔",
+		"5": "๕",
+		"6": "๖",
+		"7": "๗",
+		"8": "๘",
+		"9": "๙",
+		"0": "๐",
+	}
+
+	for _, c := range text {
+		key := string(c)
+		if thaiNumber, ok := numberMap[key]; ok {
+			fmt.Print(thaiNumber)
+		} else {
+			fmt.Print(string(key))
+		}
+	}
 }
