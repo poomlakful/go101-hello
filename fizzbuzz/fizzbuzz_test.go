@@ -2,7 +2,7 @@ package fizzbuzz_test
 
 /**
 *
-*  package test name should be end with ${package_name}_test.go
+*  package test name should be end with _test like. ${package_name}_test.go
 *
 **/
 
